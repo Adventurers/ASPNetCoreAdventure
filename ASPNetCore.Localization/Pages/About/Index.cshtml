@@ -1,0 +1,26 @@
+﻿@page
+
+
+@model ASPNetCore.Localization.Pages.About.IndexModel
+
+
+<form id="cultureForm"
+      asp-page-handler="Set"
+      asp-route-returnUrl="@PageContext.HttpContext.Request.Path"
+      method="post"
+      role="form">
+    <select class="form-control"
+            name="uiCulture"
+            asp-for="@Model.cultureFeature.RequestCulture.UICulture.Name"
+            asp-items="@Model.supportedUICultures"></select>
+</form>
+
+@section scripts{
+    <script type="text/javascript">
+        (function () {
+            $("#cultureForm select").on("change", function () {
+                $(this).parent().submit();
+            });
+        }());
+    </script>
+}

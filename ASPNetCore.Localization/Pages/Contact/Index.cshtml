@@ -1,0 +1,21 @@
+﻿@page
+@model ASPNetCore.Localization.Pages.Contact.IndexModel
+@{
+
+}
+
+<form method="post">
+    <div class="form-group">
+        <label class="control-label" for="Name">Name</label>
+        <input asp-for="@Model.Emaill" class="form-control" name="Name" type="text" placeholder="Name" />
+        <span asp-validation-for="@Model.Emaill"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Comment">Comment</label>
+        <textarea asp-for="@Model.Comment" class="form-control" name="Comment" placeholder="Comment"></textarea>
+        <span asp-validation-for="@Model.Comment"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" name="submit" value="Send" />
+    </div>
+</form>

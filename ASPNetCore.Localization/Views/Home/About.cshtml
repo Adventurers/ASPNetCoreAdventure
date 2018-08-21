@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using  ASPNetCore.Localization.Controllers
+
+@inject IHtmlLocalizer<HomeController> localizer
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<p style="direction:rtl">
+    @localizer["reciever" , "a@b.com"]
+</p>

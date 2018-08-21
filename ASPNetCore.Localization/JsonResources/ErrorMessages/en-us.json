@@ -1,0 +1,6 @@
+﻿{
+  "MaxLengthError": "The field {0} must be a maximum length of '{1}'.",
+  "RequiredError": "The {0} field is required.",
+  "Email": "Email Address",
+  "Comment" :  "Comment"
+}

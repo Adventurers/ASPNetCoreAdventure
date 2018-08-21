@@ -1,0 +1,32 @@
+﻿@page "{productId}/{productName}"
+@using ASPNetCore.RazorPage.Helpers
+
+@model ASPNetCore.RazorPage.Pages.Products.IndexModel
+
+@{
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        var url = "/Products?handler=Products&id=10&name=test";
+        $.ajax({
+            type: "Get",
+            url: url,
+            dataType: "json",
+            contentType: "application/json"
+        }).done(function (result) {
+
+            console.log(result)
+
+        });
+
+    })
+</script>
+
+@foreach (var product in Model.Products)
+{
+    <div class="product @(product.IsProductAvailibility())">
+
+    </div>
+}
+
