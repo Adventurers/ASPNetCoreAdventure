@@ -28,12 +28,11 @@ namespace ASPNetCore.Localization.Localization.Providers
             if (!exists)
             {
                 exists = query.TryGetValue("returnUrl", out StringValues requesturl);
-                // hack because Identityserver4 does some magic here...
-                // Need to set the culture manually
+
                 if (exists)
                 {
                     var request = requesturl.ToArray()[0];
-                    Uri uri = new Uri("http://faketopreventexception" + request);
+                    Uri uri = new Uri("http://faketit.com" + request);
                     var query1 = QueryHelpers.ParseQuery(uri.Query);
                     var requestCulture = query1.FirstOrDefault(t => t.Key == "ui_locales").Value;
 
@@ -76,7 +75,7 @@ namespace ASPNetCore.Localization.Localization.Providers
 
             if (cultureName == null && uiCultureName == null)
             {
-                // No values specified for either so no match
+               
                 return null;
             }
 
